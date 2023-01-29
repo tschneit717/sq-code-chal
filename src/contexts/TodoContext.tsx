@@ -1,15 +1,15 @@
-import { createContext, FC, PropsWithChildren, useState } from "react";
+import { createContext, Dispatch, FC, PropsWithChildren, SetStateAction, useState } from "react";
 import { TodoItem } from "../components/TodoItem/TodoItem.interface";
 
 
 interface TodoContextType {
   list: TodoItem[]
-  addListItem: Function
-  updateListItem: Function 
-  updateListItemStatus: Function 
-  removeListItem: Function
-  saveListItems: Function
-  fetchSavedList: Function
+  addListItem: (value: string) => void
+  updateListItem: (item: TodoItem, newValue: string) => void
+  updateListItemStatus: (item: TodoItem) => void 
+  removeListItem: (item: TodoItem) => void
+  saveListItems: () => void
+  fetchSavedList: () => void
 }
 
 const TODOLIST = 'todoList'

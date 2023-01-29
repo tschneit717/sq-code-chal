@@ -1,9 +1,9 @@
-import { ChangeEvent, ChangeEventHandler, FormEventHandler, SetStateAction, SyntheticEvent, useState } from "react";
+import { ChangeEvent, ChangeEventHandler, Dispatch, FormEventHandler, SetStateAction, SyntheticEvent, useState } from "react";
 
 interface InputFieldInterface {
-  callback: Function;
-  name: string;
-  label: string;
+  callback: (val: string) => void
+  name: string
+  label: string
 }
 
 export const InputField = ({callback, name, label}: InputFieldInterface) => {
